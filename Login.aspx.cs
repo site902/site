@@ -49,7 +49,7 @@ public partial class Login : System.Web.UI.Page
              }
              else
              {
-                 incor = "user or pasword are incorrect";
+                 incor = "alert('user or pasword are incorrect')";
              }
         }        
     }
