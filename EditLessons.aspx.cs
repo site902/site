@@ -13,6 +13,9 @@ public partial class EditLessons : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.Form["submit"] != null)
+        {
+            
         string sql = "SELECT * FROM Lessons";
 
         DataTable dt = MyAdoHelper.ExecuteDataTable("DB.mdb", sql);        
@@ -37,17 +40,14 @@ public partial class EditLessons : System.Web.UI.Page
                 show += "<td><input type='text' value='" + dt.Rows[i]["LessonDate"] + "'/></td>";
                 show += "<td><input type='text' value='" + dt.Rows[i]["Time"] + "'/></td>";
                 show += "<td><input type='sumbit' value='עדכן' name='submit'/></td>";
-<<<<<<< HEAD
-                show += "<td><input type='button' value='מחק' onclick='window.location.href=\"DeleteLesson.aspx?id=" + dt.Rows[i]["ID"] + "\' />"
-=======
-                show += "<td><input type='button' value='מחק' onclick='window.location.href=\"DeleteLesson.aspx?date=" + dt.Rows[i]["LessonDate"] + "\' />";
->>>>>>> bf68a864a408c75c7149bb97290d56d935e9b7fc
-                
+                show += "<td><input type='button' value='מחק' onclick='window.location.href=\"DeleteLesson.aspx?id=" + dt.Rows[i]["ID"] + "\' />"              
                 show += "</form>";
                 show += "</tr>";
             }
 
             show += "</table>";
+        }
+
         }
     }
 }

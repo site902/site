@@ -11,6 +11,10 @@ public partial class DeleteLesson : System.Web.UI.Page
     {
         string id = Request.QueryString["id"];
 
+        string sql = "DELETE FROM Lessons WHERE ID='" + id + "'";
 
+        MyAdoHelper.DoQuery("DB.mdb", sql);
+
+        Response.Redirect("EditLesson.aspx");
     }
 }
