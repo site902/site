@@ -26,7 +26,7 @@ public partial class Register : System.Web.UI.Page
             string key = keys[i];
             string value = Request.Form[key];
 
-            
+            fields[i] = new KeyValuePair<string, string>(key, value);
         }
     }
 }
