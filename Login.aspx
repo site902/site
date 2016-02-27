@@ -9,9 +9,7 @@
 
     <form name="login" method="post" action="">
 
-        <h3>התחברות:</h3>
-
-        
+        <h3>התחברות:</h3>      
 
         <table>
             <tr>

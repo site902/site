@@ -13,9 +13,11 @@ public partial class Register : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        List<KeyValuePair<string, string>> fields = new List<KeyValuePair<string, string>>(6);
+        if (Request.Form["submit"] != null)
+        {
+            List<KeyValuePair<string, string>> fields = new List<KeyValuePair<string, string>>();
 
-        string[] keys = 
+            string[] keys = 
         {
             "username",
             "fname",
@@ -23,32 +25,35 @@ public partial class Register : System.Web.UI.Page
             "phone",
             "password",
             "gender"
-        };
+        };            
 
-        for (int i = 0; i < fields.Count; i++)
-        {
-            string key = keys[i];
-            string value = Request.Form[key];
+            for (int i = 0; i < 6; i++)
+            {
+                string key = keys[i];
+                string value = Request.Form[key];
 
-            fields[i] = new KeyValuePair<string, string>(key, value);
-        }
+                KeyValuePair<string, string> temp = new KeyValuePair<string, string>(key, value);
 
-        string sql = "INSERT INTO " + tableName + "(" + fields[0].Key;
+                fields.Add(temp);
+            }
 
-        for (int i = 1; i < fields.Count; i++)
-        {
-            sql += "," + fields[i].Key;
-        }
+            string sql = "INSERT INTO " + tableName + " (" + fields[0].Key;
 
-        sql += ") VALUES ('" + fields[0].Value + "'";
+            for (int i = 1; i < fields.Count; i++)
+            {
+                sql += "," + fields[i].Key;
+            }
 
-        for (int i = 1; i < fields.Count; i++)
-        {
-            sql += ",'" + fields[i].Value + "'";
-        }
+            sql += ") VALUES ('" + fields[0].Value + "'";
 
-        sql += ")";
+            for (int i = 1; i < fields.Count; i++)
+            {
+                sql += ",'" + fields[i].Value + "'";
+            }
 
-        MyAdoHelper.DoQuery(fileName, sql);
+            sql += ")";          
+
+            MyAdoHelper.DoQuery(fileName, sql);
+        }        
     }
 }

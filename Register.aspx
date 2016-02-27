@@ -13,6 +13,12 @@
             <th>שם פרטי</th>
             <td><input type="text" name="fname" id="fname" /></td>
         </tr>
+
+        <tr>
+            <th>שם משפחה:  </th>
+            <td><input type="text" name="lname" id="lname" /></td>
+        </tr>
+
         <tr>
             <th>טלפון נייד</th>
             <td><input type="text" name="phone" id="phone" /></td>

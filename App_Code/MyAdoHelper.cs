@@ -87,8 +87,7 @@ public class MyAdoHelper
         conn.Close();
         return found;
 
-    }
-    //רועי
+    }    
 
     public static DataTable ExecuteDataTable(string fileName, string sql)
     {
