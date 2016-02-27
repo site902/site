@@ -45,7 +45,8 @@ public partial class Login : System.Web.UI.Page
                 }
 
                 Session["username"] = user;
-
+                Session["fname"] = dt.Rows[0]["fname"];
+                Session["lname"] = dt.Rows[0]["lname"];
              }
              else
              {

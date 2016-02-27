@@ -9,7 +9,7 @@ public partial class Register : System.Web.UI.Page
 {
 
     string fileName = "DB.mdb";
-    string tableName = "Table";
+    string tableName = "td";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,7 +23,7 @@ public partial class Register : System.Web.UI.Page
             "fname",
             "lname",
             "phone",
-            "password",
+            "[password]",
             "gender"
         };            
 
@@ -34,7 +34,7 @@ public partial class Register : System.Web.UI.Page
 
                 KeyValuePair<string, string> temp = new KeyValuePair<string, string>(key, value);
 
-                fields.Add(temp);
+                fields.Add(temp);                
             }
 
             string sql = "INSERT INTO " + tableName + " (" + fields[0].Key;
@@ -51,7 +51,7 @@ public partial class Register : System.Web.UI.Page
                 sql += ",'" + fields[i].Value + "'";
             }
 
-            sql += ")";          
+            sql += ")";
 
             MyAdoHelper.DoQuery(fileName, sql);
         }        

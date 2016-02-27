@@ -39,5 +39,10 @@ namespace coffe
         {
             a.Add(this.key, this.value);
         }
+
+        public void AddToLIst(List<KeyValuePair<TKey,TValue>> a)
+        {
+            a.Add(this);
+        }
     }
 }
