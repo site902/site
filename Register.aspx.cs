@@ -48,5 +48,7 @@ public partial class Register : System.Web.UI.Page
         }
 
         sql += ")";
+
+        MyAdoHelper.DoQuery(fileName, sql);
     }
 }

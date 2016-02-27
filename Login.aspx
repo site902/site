@@ -22,8 +22,8 @@
             </tr>
 
             <tr>
-                <td><input type="submit" name="submit" /></td>
-                <td><input type="reset" name="reset" /></td>
+                <td><input type="submit" name="submit" value="התחברות" /></td>
+                <td><input type="reset" name="reset" value="איפוס" /></td>
             </tr>
         </table>
 
