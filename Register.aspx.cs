@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 
 public partial class Register : System.Web.UI.Page
 {
+
+    string fileName = "DB.mdb";
+    string tableName = "Table";
+
     protected void Page_Load(object sender, EventArgs e)
     {
         List<KeyValuePair<string, string>> fields = new List<KeyValuePair<string, string>>(6);
@@ -28,5 +32,21 @@ public partial class Register : System.Web.UI.Page
 
             fields[i] = new KeyValuePair<string, string>(key, value);
         }
+
+        string sql = "INSERT INTO " + tableName + "(" + fields[0].Key;
+
+        for (int i = 1; i < fields.Count; i++)
+        {
+            sql += "," + fields[i].Key;
+        }
+
+        sql += ") VALUES ('" + fields[0].Value + "'";
+
+        for (int i = 1; i < fields.Count; i++)
+        {
+            sql += ",'" + fields[i].Value + "'";
+        }
+
+        sql += ")";
     }
 }
