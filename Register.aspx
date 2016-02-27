@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <form action="" method="post" runat="server">
     <table border="0">
         <tr>
             <th>שם משתמש</th>
@@ -35,4 +36,5 @@
             <td><input type="reset" value="נקה" /></td>
         </tr>
     </table>
+    </form>
 </asp:Content>
