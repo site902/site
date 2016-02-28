@@ -36,9 +36,9 @@ public partial class EditLessons : System.Web.UI.Page
                     show += "<tr>";
                     show += "<form method='post' action='AdminEditLesson.aspx'>";
 
-                    show += "<td><input type='text' value='" + dt.Rows[i]["studentName"] + "'/></td>";
-                    show += "<td><input type='text' value='" + dt.Rows[i]["LessonDate"] + "'/></td>";
-                    show += "<td><input type='text' value='" + dt.Rows[i]["Time"] + "'/></td>";
+                    show += "<td><input type='text' name='name' value='" + dt.Rows[i]["studentName"] + "'/></td>";
+                    show += "<td><input type='text' name='date' value='" + dt.Rows[i]["LessonDate"] + "'/></td>";
+                    show += "<td><input type='text' name='time' value='" + dt.Rows[i]["Time"] + "'/></td>";
                     show += "<td><input type='sumbit' value='עדכן' name='submit'/></td>";
                     show += "<td><input type='button' value='מחק' onclick='window.location.href=\"DeleteLesson.aspx?id=" + dt.Rows[i]["ID"] + "\' />";
                     show += "</form>";
