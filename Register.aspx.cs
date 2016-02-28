@@ -46,26 +46,28 @@ public partial class Register : System.Web.UI.Page
 
             if (IsUSerExist(fields[0].Value, fields[3].Value))
             {
-                cor = "Username already Exist";
+                cor = "שם משתמש כבר קיים,  אנא בחר  אחד אחר";
             }
-
-            string sql = "INSERT INTO " + tableName + " (" + fields[0].Key;
-
-            for (int i = 1; i < fields.Count; i++)
+            else
             {
-                sql += "," + fields[i].Key;
-            }
+                string sql = "INSERT INTO " + tableName + " (" + fields[0].Key;
 
-            sql += ") VALUES ('" + fields[0].Value + "'";
+                for (int i = 1; i < fields.Count; i++)
+                {
+                    sql += "," + fields[i].Key;
+                }
 
-            for (int i = 1; i < fields.Count; i++)
-            {
-                sql += ",'" + fields[i].Value + "'";
-            }
+                sql += ") VALUES ('" + fields[0].Value + "'";
 
-            sql += ")";
+                for (int i = 1; i < fields.Count; i++)
+                {
+                    sql += ",'" + fields[i].Value + "'";
+                }
 
-            MyAdoHelper.DoQuery(fileName, sql);
+                sql += ")";
+
+                MyAdoHelper.DoQuery(fileName, sql);
+            }            
         }        
     }
 }
