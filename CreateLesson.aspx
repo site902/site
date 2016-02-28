@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <form name="lesson_C">
+    <form method="post" name="lesson_C">
 
         <h3>צור שיעור חדש: </h3>
 
