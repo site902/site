@@ -5,6 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <form action="" method="post" runat="server">
+
+        <p><%=cor %></p>
+
     <table border="0">
         <tr>
             <th>שם משתמש</th>

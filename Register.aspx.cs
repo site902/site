@@ -7,9 +7,16 @@ using System.Web.UI.WebControls;
 
 public partial class Register : System.Web.UI.Page
 {
-
+    public string cor = "";
     string fileName = "DB.mdb";
     string tableName = "td";
+
+    public bool IsUSerExist(string username, string phone)
+    {
+        string sql = "SELECT username FROM td WHERE phone='" + phone + "'";
+
+        return MyAdoHelper.IsExist(fileName, sql);
+    }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -19,12 +26,12 @@ public partial class Register : System.Web.UI.Page
 
             string[] keys = 
         {
-            "username",
-            "fname",
-            "lname",
-            "phone",
-            "pass",
-            "gender"
+            "username",//0
+            "fname",//1
+            "lname",//2
+            "phone",//3
+            "pass",//4
+            "gender"//5
         };            
 
             for (int i = 0; i < 6; i++)
@@ -35,6 +42,11 @@ public partial class Register : System.Web.UI.Page
                 KeyValuePair<string, string> temp = new KeyValuePair<string, string>(key, value);
 
                 fields.Add(temp);                
+            }
+
+            if (IsUSerExist(fields[0].Value, fields[3].Value))
+            {
+                cor = "Username already Exist";
             }
 
             string sql = "INSERT INTO " + tableName + " (" + fields[0].Key;
