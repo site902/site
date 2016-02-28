@@ -15,38 +15,38 @@ public partial class EditLessons : System.Web.UI.Page
     {
         if (Request.Form["submit"] != null)
         {
-            
-        string sql = "SELECT * FROM Lessons";
 
-        DataTable dt = MyAdoHelper.ExecuteDataTable("DB.mdb", sql);        
+            string sql = "SELECT * FROM Lessons";
 
-        if (dt.Rows.Count > 0)
-        {
-            show += "<table>";
-            show += "<tr>";
-            show += "<th>שם תלמיד</th>";
-            show += "<th>תאריך שיעור</th>";
-            show += "<th>שעת שיעור</th>";
-            show += "<th>עדכן שיעור</th>";
-            show += "<th>מחק שיעור</th>";
-            show += "</tr>";
+            DataTable dt = MyAdoHelper.ExecuteDataTable("DB.mdb", sql);
 
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if (dt.Rows.Count > 0)
             {
+                show += "<table>";
                 show += "<tr>";
-                show += "<form method='post' action='AdminEditLesson.aspx'>";
-
-                show += "<td><input type='text' value='" + dt.Rows[i]["studentName"] + "'/></td>";
-                show += "<td><input type='text' value='" + dt.Rows[i]["LessonDate"] + "'/></td>";
-                show += "<td><input type='text' value='" + dt.Rows[i]["Time"] + "'/></td>";
-                show += "<td><input type='sumbit' value='עדכן' name='submit'/></td>";
-                show += "<td><input type='button' value='מחק' onclick='window.location.href=\"DeleteLesson.aspx?id=" + dt.Rows[i]["ID"] + "\' />"              
-                show += "</form>";
+                show += "<th>שם תלמיד</th>";
+                show += "<th>תאריך שיעור</th>";
+                show += "<th>שעת שיעור</th>";
+                show += "<th>עדכן שיעור</th>";
+                show += "<th>מחק שיעור</th>";
                 show += "</tr>";
-            }
 
-            show += "</table>";
-        }
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    show += "<tr>";
+                    show += "<form method='post' action='AdminEditLesson.aspx'>";
+
+                    show += "<td><input type='text' value='" + dt.Rows[i]["studentName"] + "'/></td>";
+                    show += "<td><input type='text' value='" + dt.Rows[i]["LessonDate"] + "'/></td>";
+                    show += "<td><input type='text' value='" + dt.Rows[i]["Time"] + "'/></td>";
+                    show += "<td><input type='sumbit' value='עדכן' name='submit'/></td>";
+                    show += "<td><input type='button' value='מחק' onclick='window.location.href=\"DeleteLesson.aspx?id=" + dt.Rows[i]["ID"] + "\' />";
+                    show += "</form>";
+                    show += "</tr>";
+                }
+
+                show += "</table>";
+            }
 
         }
     }
