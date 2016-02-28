@@ -10,14 +10,14 @@ public partial class Login : System.Web.UI.Page
 {
     public string incor = "";
     string fileName = "DB.mdb";
-    string tableName = "Table";
+    string tableName = "td";
 
     public bool IsUserAndPaswordExist(string username, string password)
     {
-        string fileName = "Database1.mdb";
-        string tableName = "Userdata";
+        string fileName = "DB.mdb";
+        string tableName = "td";
 
-        string isExUsername = "SELECT * FROM " + tableName + " WHERE username = '" + username + "' AND password_f = '" + password + "'";
+        string isExUsername = "SELECT * FROM " + tableName + " WHERE username = '" + username + "' AND pass = '" + password + "'";
 
         return MyAdoHelper.IsExist(fileName, isExUsername);
     }
@@ -29,7 +29,7 @@ public partial class Login : System.Web.UI.Page
             string user = Request.Form["username"];
             string password = Request.Form["password"];
 
-            string isExUsername = "SELECT * FROM " + tableName + " WHERE username = '" + user + "' AND password_f = '" + password + "'";
+            string isExUsername = "SELECT * FROM " + tableName + " WHERE username = '" + user + "' AND pass = '" + password + "'";
 
              if (IsUserAndPaswordExist(user, password))
              {
@@ -47,6 +47,8 @@ public partial class Login : System.Web.UI.Page
                 Session["username"] = user;
                 Session["fname"] = dt.Rows[0]["fname"];
                 Session["lname"] = dt.Rows[0]["lname"];
+
+                Response.Redirect("Default.aspx");
              }
              else
              {

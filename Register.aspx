@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <th>סיסמא</th>
-            <td><input type="password" name="password" id="password" /></td>
+            <td><input type="password" name="pass" id="pass" /></td>
             <td><b class="regError" id="e-pass"></b></td>
         </tr>
         <tr>

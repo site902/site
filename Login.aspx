@@ -10,6 +10,7 @@
     <form name="login" method="post" action="">
 
         <h3>התחברות:</h3>      
+        <p><%=incor %></p>
 
         <table>
             <tr>

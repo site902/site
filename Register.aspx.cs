@@ -23,7 +23,7 @@ public partial class Register : System.Web.UI.Page
             "fname",
             "lname",
             "phone",
-            "[password]",
+            "pass",
             "gender"
         };            
 
