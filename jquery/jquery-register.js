@@ -7,8 +7,8 @@ $(document).ready(function () {
     var lname = $('#lname');
     var phone = $('#phone');
     var ephone = $('#e-phone');
-    var password = $('#password');
-    var epass = $('#epass');
+    var password = $('#pass');
+    var epass = $('#e-pass');
 
     username.keypress(function () {
         //לעשות שימוש באג'קס
@@ -63,7 +63,7 @@ function CheckForm() {
     var fname = $('#fname').val();
     var lname = $('#lname').val();
     var phone = $('#phone').val();
-    var password = $('#password').val();
+    var password = $('#pass').val();
     if (username.length === 0) {
         alert('יש להזין שם משתמש');
         return false;
@@ -84,6 +84,15 @@ function CheckForm() {
         alert('השם המשפחה אינו חוקי');
         return false;
     }
+    
+    if (password.length === 0) {
+        alert('יש להזין סיסמא');
+        return false;
+    }
+    if (password.length < 6) {
+        alert('על הסיסמא להיות באורך 6 תווים לפחות');
+        return false;
+    }
     if (phone.length === 0) {
         alert('יש להזין מספר טלפון');
         return false;
@@ -92,15 +101,7 @@ function CheckForm() {
         alert('מספר הטלפון אינו חוקי');
         return false;
     }
-    if (password.length === 0) {
-        alert('יש להזין סיסמא');
-        return false;
-    }
-    if (password.length < 6) {
-        alert('על הסיסמא להיות באוך 6 תווים לפחות');
-        return false;
-    }
-    return false;
+    return true;
 }
 
 function NamesCheck(name) {
@@ -113,12 +114,14 @@ function NamesCheck(name) {
 }
 
 function PhoneCheck(number) {
-    if (name.length != 8) {
+    if (number.length != 8) {
         return false;
     }
-    for (var i = 0; i < number.length; i++) {
-        if (isNaN(number[i])) {
-            return false;
+    else {
+        for (var i = 0; i < number.length; i++) {
+            if (isNaN(number[i])) {
+                return false;
+            }
         }
     }
     return true;
