@@ -46,7 +46,7 @@ public partial class Register : System.Web.UI.Page
 
             if (IsUSerExist(fields[0].Value, fields[3].Value))
             {
-                cor = "שם משתמש כבר קיים,  אנא בחר  אחד אחר";
+                cor = "alert('שם משתמש כבר קיים,  אנא בחר אחד אחר');";
             }
             else
             {

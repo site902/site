@@ -2,16 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script src="jquery/jquery-register.js"></script>
+    <script type="text/javascript">
+        <%=cor %>
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<<<<<<< HEAD
     <form onsubmit="return CheckForm()" action="" method="post" runat="server">
-=======
-    <form action="" method="post" runat="server">
 
-        <p><%=cor %></p>
-
->>>>>>> 482f9969de4000cfc0739f88bf5104eb3c47bd1e
     <table border="0">
         <tr>
             <th>שם משתמש</th>
