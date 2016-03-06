@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EX3", "P117\EX3.csproj", "{B9B1F482-0715-46DA-B656-7792D5A1DDBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9B1F482-0715-46DA-B656-7792D5A1DDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B1F482-0715-46DA-B656-7792D5A1DDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B1F482-0715-46DA-B656-7792D5A1DDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B1F482-0715-46DA-B656-7792D5A1DDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

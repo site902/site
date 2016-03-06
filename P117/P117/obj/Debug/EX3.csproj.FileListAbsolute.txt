@@ -1,0 +1,6 @@
+C:\Users\Roey\Documents\Computer\Excercise\Basics\2nd book\P117\P117\bin\Debug\P117.exe.config
+C:\Users\Roey\Documents\Computer\Excercise\Basics\2nd book\P117\P117\bin\Debug\P117.exe
+C:\Users\Roey\Documents\Computer\Excercise\Basics\2nd book\P117\P117\bin\Debug\P117.pdb
+C:\Users\Roey\Documents\Computer\Excercise\Basics\2nd book\P117\P117\obj\Debug\EX3.csprojResolveAssemblyReference.cache
+C:\Users\Roey\Documents\Computer\Excercise\Basics\2nd book\P117\P117\obj\Debug\P117.exe
+C:\Users\Roey\Documents\Computer\Excercise\Basics\2nd book\P117\P117\obj\Debug\P117.pdb
